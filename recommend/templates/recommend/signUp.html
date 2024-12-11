@@ -1,0 +1,103 @@
+{% extends 'recommend/base.html'%}
+{% block title %}Register{% endblock %}
+{% block css %}
+<style>
+    
+    .container-fluid {
+        margin-top: 50px;
+    }
+
+    .panel {
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .panel-body {
+        padding: 40px;
+    }
+
+    h3 {
+        text-align: center;
+        color: #333;
+    }
+
+    .form-horizontal .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-horizontal .control-label {
+        text-align: right;
+        color: #555;
+    }
+
+    .form-horizontal input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn-success {
+        background-color: #5cb85c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-success:hover {
+        background-color: #4cae4c;
+    }
+
+    .panel-footer {
+        text-align: center;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+        padding: 15px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .panel-footer a {
+        color: #337ab7;
+    }
+
+    .panel-footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-10 col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Register an Account</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'recommend/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-info">Submit</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-footer">
+                    Already have an account? <a href="{% url 'login' %}">Click here</a> to log in.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
