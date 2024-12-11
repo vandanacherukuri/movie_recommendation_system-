@@ -1,5 +1,4 @@
 # Django based movie recommender system
-> https://awesome-movie-recommender.herokuapp.com
 
 ![GitHub stars](https://img.shields.io/github/stars/rajaprerak/movie_recommender) 
 [![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/rajaprerak/movie_recommender/commits/master)
@@ -10,8 +9,6 @@
 #### Home Page
 <img src="website_images/HomePage.png" width="900">
 
-#### Detail Page
-<img src="website_images/DetailPage.png" width="900">
 
 ----
 
